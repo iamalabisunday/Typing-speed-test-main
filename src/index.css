@@ -1,1 +1,44 @@
 @import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-background: hsl(0, 0%, 7%);
+  --color-borderline: hsl(0, 0%, 15%);
+  /* --color-neutral: hsl(240, 3%, 46%); */
+  --color-darktext: hsl(240, 1%, 59%);
+  --color-text: hsl(0, 0%, 100%);
+  /* --color-blue: hsl(214, 100%, 55%); */
+  --color-active: hsl(210, 100%, 65%);
+  /* --color-correct: hsl(140, 63%, 57%); */
+  /* --color-incorrect: hsl(354, 63%, 57%); */
+  /* --color-time: hsl(49, 85%, 70%); */
+
+  /* Typography */
+  --font-family: "Sora", sans-serif;
+}
+
+/* Global resets and HTML Element defaults */
+@layer base {
+  body {
+    @apply font-family bg-background text-text;
+  }
+}
+
+/* Reusable classes */
+@layer components {
+  .btn-border {
+    @apply text-text font-light cursor-pointer border-[1.5px] px-2 py-0.5 border-borderline rounded-sm;
+  }
+
+  .btn-border:active {
+    @apply border-active text-active font-light border-[1.5px] scale-95;
+  }
+
+  .btn {
+    @apply w-fit text-text font-normal border-[1.5px] px-3 py-1.5 border-borderline rounded-sm bg-borderline cursor-pointer;
+  }
+
+  .btn:active {
+    @apply bg-active text-white font-normal border-[1.5px] scale-95;
+  }
+}
