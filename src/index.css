@@ -4,13 +4,13 @@
   /* Colors */
   --color-background: hsl(0, 0%, 7%);
   --color-borderline: hsl(0, 0%, 15%);
-  /* --color-neutral: hsl(240, 3%, 46%); */
+  --color-neutral: hsl(240, 3%, 46%);
   --color-darktext: hsl(240, 1%, 59%);
   --color-text: hsl(0, 0%, 100%);
-  /* --color-blue: hsl(214, 100%, 55%); */
+  --color-primblue: hsl(214, 100%, 55%);
   --color-active: hsl(210, 100%, 65%);
-  /* --color-correct: hsl(140, 63%, 57%); */
-  /* --color-incorrect: hsl(354, 63%, 57%); */
+  --color-correct: hsl(140, 63%, 57%);
+  --color-incorrect: hsl(354, 63%, 57%);
   /* --color-time: hsl(49, 85%, 70%); */
 
   /* Typography */

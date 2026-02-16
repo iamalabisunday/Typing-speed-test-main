@@ -1,18 +1,20 @@
-export default function Body() {
+export default function Body({ targetText, typedText }) {
   return (
-    <p className="font-normal text-[1.5rem] text-darktext leading-11">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-      repudiandae nisi impedit eos rerum placeat beatae sunt fugiat laboriosam
-      dolor, minus illo recusandae ab illum quod cupiditate labore dolorem in,
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-      repudiandae nisi impedit eos rerum placeat beatae sunt fugiat laboriosam
-      dolor, minus illo recusandae ab illum quod cupiditate labore dolorem in,
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-      repudiandae nisi impedit eos rerum placeat beatae sunt fugiat laboriosam
-      dolor, minus illo recusandae ab illum quod cupiditate labore dolorem in,
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-      repudiandae nisi impedit eos rerum placeat beatae sunt fugiat laboriosam
-      dolor, minus illo recusandae ab illum quod cupiditate labore dolorem in.
-    </p>
+    <div className="font-normal text-[1.5rem] text-darktext leading-11">
+      {targetText.split("").map((char, index) => {
+        let color = "text-darktext";
+        if (index < typedText.length) {
+          color = typedText[index] === char ? "text-text" : "text-incorrect";
+        } else if (index === typedText.length) {
+          color = "text-primblue bg-primblue/20 animate-pulse"; // Cursor indication
+        }
+
+        return (
+          <span key={index} className={`${color}`}>
+            {char}
+          </span>
+        );
+      })}
+    </div>
   );
 }
